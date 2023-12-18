@@ -37,6 +37,9 @@ describe ('SusbscriptionLP', function(){
         subscriptionlp.contactUsFooter()
         subscriptionlp.giftSubsFooter()
         subscriptionlp.downloadAppFooter()
+        subscriptionlp.nytFooterLogo()
+        subscriptionlp.marketingQuote()
+        subscriptionlp.termsofSaleFooter()
     })
     
     

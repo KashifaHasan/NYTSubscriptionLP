@@ -1,12 +1,12 @@
 class SubscriptionLP
 {
-    // constructor(){
-    //     this.url = 'https://www.nytimes.com/subscription'
-    // }
+    constructor(){
+        this.url = 'https://www.nytimes.com/subscription'
+    }
 
     navigateToUrl()
     {
-        cy.visit('https://www.nytimes.com/subscription/')
+        cy.visit(this.url)
     }
 
     verifyPageTitle()
@@ -58,11 +58,8 @@ class SubscriptionLP
 
     faqsFooter()
     {
-        cy.get('.Navigation_list__d1k-0  li a').eq(0).scrollIntoView().click()
-         //return cy.title().should('have.text','Digital Subscriptions – Help')
-      //  cy.url().should('include','://help.nytimes.com/hc/en-us/articles/115015852367-Digital-subscriptions')
-         cy.go('back')
-    
+        cy.get('.Navigation_list__d1k-0  li a').eq(0).scrollIntoView().invoke('removeAttr','target').click()
+        cy.visit(this.url)
         //Verify the destination url
 
     }
@@ -70,20 +67,54 @@ class SubscriptionLP
     contactUsFooter()
     {
         cy.get('.Navigation_list__d1k-0  li a').eq(1).scrollIntoView().click()
-        cy.go('back')
+        cy.visit(this.url)
     }
 
     giftSubsFooter()
     {
         cy.get('.Navigation_list__d1k-0  li a').eq(2).scrollIntoView().click()
-        cy.go('back')
+        cy.visit(this.url)
     }
 
     downloadAppFooter()
     {
         cy.get('.Navigation_list__d1k-0  li a').eq(3).scrollIntoView().click()
-        cy.go('back')
+        cy.visit(this.url)
     }
+
+    nytFooterLogo()
+    {
+        cy.get('.Icons_nytNameplateWhite__5MqaE').should('be.visible')
+    }
+    marketingQuote()
+    {
+        cy.get('.MarketingCopy_marketingCopy__vmrlW').should('have.text', 'We believe that great journalism has the power to make each reader’s life richer and more fulfilling, and all of society stronger and more just.')
+    }
+
+    nytIcon()
+     {
+        cy.get('.Icons_nytLogoT__DTMdb').should('be.visible')
+     }
+
+     nytFooterCP()
+     {
+        cy.get('.Bottom_copyright__Ek7X1').should('be.visible')
+     }
+
+     termsofSaleFooter()
+     {
+        cy.get('https://www.nytimes.com/content/help/rights/sale/terms-of-sale.html').click()
+        // cy.get('Bottom_links__m52iA a').click()
+        // cy.visit(this.url)
+        //cy.get('Bottom_links__m52iA a').eq(0).scrollIntoView().click()
+        cy.visit(this.url)
+     }
+
+     privacyPolicyFooter(){
+        cy.get('Bottom_links__m52iA a').eq(1).scrollIntoView().click()
+        cy.visit(this.url)
+     }
+
 } 
 
 export default SubscriptionLP;
