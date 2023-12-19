@@ -29,6 +29,13 @@ describe ('SusbscriptionLP', function(){
         subscriptionlp.lpCreditCardslogo()
     })
 
+    it('Legal Validations',function()
+    {
+        subscriptionlp.legalVerify()
+
+    })
+    
+
     it('Footer Validations',function()
     {
         subscriptionlp.nytAllAccessFooterlogo()
