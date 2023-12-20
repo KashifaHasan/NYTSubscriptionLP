@@ -46,6 +46,11 @@ class SubscriptionLP
         return cy.get('.PaymentIcons_creditCard__Qs6qB').should('be.visible')
     }
 
+    legalVerify()
+    {
+        cy.get('.Legal_legal__vsBve').should('have.text', 'Offer for a New York Times All Access subscription; current subscribers not eligible. Subscription excludes print edition. Some games may be available without a subscription. Your payment method will automatically be charged in advance the introductory offer rate of $4 every 4 weeks for 6 months, and after 6 months the standard rate of $25 every 4 weeks. ')
+    }
+
     nytAllAccessFooterlogo()
     {
        return cy.get('h1').should('include.text','New York Times All Access')
