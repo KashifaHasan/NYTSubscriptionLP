@@ -37,9 +37,17 @@ describe ('SusbscriptionLP', function(){
         subscriptionlp.contactUsFooter()
         subscriptionlp.giftSubsFooter()
         subscriptionlp.downloadAppFooter()
+        subscriptionlp.homeDeliveryFooter()
+        subscriptionlp.groupSubsFooter()
         subscriptionlp.nytFooterLogo()
         subscriptionlp.marketingQuote()
-        subscriptionlp.termsofSaleFooter()
+        //subscriptionlp.termsofSaleFooter()
+        //subscriptionlp.privacyPolicyFooter()
+        subscriptionlp.interestInPrint()
+        subscriptionlp.nytHDDeliveryQuote()
+        subscriptionlp. subsDeliveryQuote()
+        subscriptionlp.zipCode()
+        subscriptionlp.findOffers()
     })
     
     

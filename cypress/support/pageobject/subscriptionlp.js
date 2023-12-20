@@ -82,6 +82,18 @@ class SubscriptionLP
         cy.visit(this.url)
     }
 
+    homeDeliveryFooter()
+    {
+        cy.get('.Navigation_list__d1k-0  li a').eq(4).scrollIntoView().click()
+        cy.visit(this.url)
+    }
+
+    groupSubsFooter()
+    {
+        cy.get('.Navigation_list__d1k-0  li a').eq(5).scrollIntoView().click()
+        cy.visit(this.url)
+    }
+
     nytFooterLogo()
     {
         cy.get('.Icons_nytNameplateWhite__5MqaE').should('be.visible')
@@ -103,10 +115,7 @@ class SubscriptionLP
 
      termsofSaleFooter()
      {
-        cy.get('https://www.nytimes.com/content/help/rights/sale/terms-of-sale.html').click()
-        // cy.get('Bottom_links__m52iA a').click()
-        // cy.visit(this.url)
-        //cy.get('Bottom_links__m52iA a').eq(0).scrollIntoView().click()
+        cy.get('https://www.nytimes.com/content/help/rights/sale/terms-of-sale.html').scrollIntoView().click()
         cy.visit(this.url)
      }
 
@@ -115,6 +124,31 @@ class SubscriptionLP
         cy.visit(this.url)
      }
 
+     interestInPrint()
+     {
+        cy.get('lZ8xAWOgSBjqePcNxi1JeA==').scrollIntoView().should('have.text','Interested in print?')
+     }
+
+     nytHDDeliveryQuote()
+     {
+        cy.get('DlLSJX3B8k9KtxtF8I0mXQ==').should('have.text','Get the New York Times paper delivered, plus the full digital experience.')
+     }
+
+
+    subsDeliveryQuote()
+    {
+        cy.get('RWlBzK8kfaUScCvYXACYBw==').should('have.text','Subscribers receive free All Access Digital with a Home Delivery subscription. Save 50% for one year. You can cancel anytime.')
+    }
+
+    zipCode()
+    {
+        cy.get('XHzoGnx2E9KQtNGAH0SMjQ==').should('have.text','ZIP Code')
+    }
+
+    findOffers()
+    {
+        cy.get('GzdgME-bQusvQeOoestINw== ').should('have.text','FIND OFFERS')
+    }
 } 
 
 export default SubscriptionLP;
