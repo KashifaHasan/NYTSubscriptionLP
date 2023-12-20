@@ -1,7 +1,7 @@
 class SubscriptionLP
 {
     constructor(){
-        this.url = 'https://www.nytimes.com/subscription'
+        this.url = 'https://www.nytimes.com/subscription/'
     }
 
     navigateToUrl()
@@ -20,10 +20,10 @@ class SubscriptionLP
         return cy.get('.Icons_nytNameplateBlack__umY2X').should('be.visible')
     }
 
-    // lpHeaderImage()
-    //     {
-    //         return cy.get('.Header_heroImageSlideshowContainerDesktop__').should('be.visible')
-    //     }
+    lpHeaderImage()
+        {
+            return cy.get('.App_pageWrapper__X3Vkc div:nth-child(2)').eq(2).should('be.visible')
+        }
 
     subscribeNow()
     {   
@@ -48,7 +48,7 @@ class SubscriptionLP
 
     legalVerify()
     {
-        cy.get('.Legal_legal__vsBve').should('have.text', 'Offer for a New York Times All Access subscription; current subscribers not eligible. Subscription excludes print edition. Some games may be available without a subscription. Your payment method will automatically be charged in advance the introductory offer rate of $4 every 4 weeks for 6 months, and after 6 months the standard rate of $25 every 4 weeks. ')
+        cy.get('.Legal_legal__vsBve').should('have.text', 'Offer for a New York Times All Access subscription; current subscribers not eligible. Subscription excludes print edition. Some games may be available without a subscription. Your payment method will automatically be charged in advance the introductory offer rate of $4 every 4 weeks for 6 months, and after 6 months the standard rate of $25 every 4 weeks. Your subscription will continue until you cancel. Cancellation takes effect at the end of your current billing period. Taxes may apply. Offer terms are subject to change.')
     }
 
     nytAllAccessFooterlogo()
@@ -120,39 +120,40 @@ class SubscriptionLP
 
      termsofSaleFooter()
      {
-        cy.get('https://www.nytimes.com/content/help/rights/sale/terms-of-sale.html').scrollIntoView().click()
+        cy.get('a[href="https://www.nytimes.com/content/help/rights/sale/terms-of-sale.html"]').scrollIntoView().click()
         cy.visit(this.url)
      }
 
-     privacyPolicyFooter(){
-        cy.get('Bottom_links__m52iA a').eq(1).scrollIntoView().click()
+     privacyPolicyFooter()
+     {
+        cy.get('.Bottom_links__m52iA a').eq(1).scrollIntoView().click()
         cy.visit(this.url)
      }
 
      interestInPrint()
      {
-        cy.get('lZ8xAWOgSBjqePcNxi1JeA==').scrollIntoView().should('have.text','Interested in print?')
+        cy.get('p[class="lZ8xAWOgSBjqePcNxi1JeA=="]').should('have.text','Interested in print?')
      }
 
      nytHDDeliveryQuote()
      {
-        cy.get('DlLSJX3B8k9KtxtF8I0mXQ==').should('have.text','Get the New York Times paper delivered, plus the full digital experience.')
+        cy.get('h1[class="DlLSJX3B8k9KtxtF8I0mXQ=="]').should('have.text','Get the New York Times paper delivered, plus the full digital experience.')
      }
 
 
     subsDeliveryQuote()
     {
-        cy.get('RWlBzK8kfaUScCvYXACYBw==').should('have.text','Subscribers receive free All Access Digital with a Home Delivery subscription. Save 50% for one year. You can cancel anytime.')
+        cy.get('p[class="RWlBzK8kfaUScCvYXACYBw=="]').should('have.text','Subscribers receive free All Access Digital with a Home Delivery subscription. Save 50% for one year. You can cancel anytime.')
     }
 
     zipCode()
     {
-        cy.get('XHzoGnx2E9KQtNGAH0SMjQ==').should('have.text','ZIP Code')
+        cy.get('label[for="zipcode"]').should('have.text','ZIP Code')
     }
 
     findOffers()
     {
-        cy.get('GzdgME-bQusvQeOoestINw== ').should('have.text','FIND OFFERS')
+        cy.get('a[class="GzdgME-bQusvQeOoestINw== "]').should('have.text','FIND OFFERS')
     }
 } 
 

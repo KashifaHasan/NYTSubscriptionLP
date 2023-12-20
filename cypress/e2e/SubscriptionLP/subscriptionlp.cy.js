@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+///<reference types="Cypress" />
 import SubscriptionLP from '../../support/pageobject/subscriptionlp'
 
 describe ('SusbscriptionLP', function(){
@@ -12,7 +12,7 @@ describe ('SusbscriptionLP', function(){
     it('Header Validation and Header Image',function(){
         subscriptionlp.verifyPageTitle()
         subscriptionlp.lpHeader()
-        //subscriptionlp.lpHeaderImage()
+        subscriptionlp.lpHeaderImage()
 
     })
 
@@ -34,6 +34,16 @@ describe ('SusbscriptionLP', function(){
         subscriptionlp.legalVerify()
 
     })
+
+    it('PreFooter/BottomSection Validations',function()
+    {
+        subscriptionlp.interestInPrint()
+        subscriptionlp.nytHDDeliveryQuote()
+        subscriptionlp.subsDeliveryQuote()
+        subscriptionlp.zipCode()
+        subscriptionlp.findOffers()
+    }
+    )
     
 
     it('Footer Validations',function()
@@ -48,13 +58,8 @@ describe ('SusbscriptionLP', function(){
         subscriptionlp.groupSubsFooter()
         subscriptionlp.nytFooterLogo()
         subscriptionlp.marketingQuote()
-        //subscriptionlp.termsofSaleFooter()
-        //subscriptionlp.privacyPolicyFooter()
-        subscriptionlp.interestInPrint()
-        subscriptionlp.nytHDDeliveryQuote()
-        subscriptionlp. subsDeliveryQuote()
-        subscriptionlp.zipCode()
-        subscriptionlp.findOffers()
+        subscriptionlp.termsofSaleFooter()
+        subscriptionlp.privacyPolicyFooter()
     })
     
     
