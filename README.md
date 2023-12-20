@@ -16,7 +16,7 @@ Tools that need to be installed before running the project.
 ### Installation
 1. Clone the repository: git clone https://github.com/KashifaHasan/NYTSubscriptionLP.git
 2. Navigate to the project directory: $ cd NYTSubscriptionLP
-3. Install dependencies: `npm install` & 'npm install cypress -save-dev' in your project terminal
+3. Install dependencies:'npm install cypress -save-dev' in your project terminal
 
 ### Running the Automation Test
 * To open the Cypress browser 'npx cypress open' 
